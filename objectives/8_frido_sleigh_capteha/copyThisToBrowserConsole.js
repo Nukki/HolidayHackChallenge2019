@@ -27,7 +27,6 @@ const beatCapteha = data => {
   for (let image of data.images) {
     let id = image.uuid;
     classifier.classify(document.getElementById(id), (err, results) => {
-      console.log(results[0]);
       if (types.includes(results[0].label)) {
         $(`#${id}`).addClass('selected');
         answers.push(id);
